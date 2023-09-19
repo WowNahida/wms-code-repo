@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syh.mapper.UserMapper">
+    <!--IPage<User> pageC(IPage<User> page)-->
+    <select id="pageC" resultType="com.syh.entity.User">
+        select * from user
+    </select>
+
+    <!--IPage<User> pageCM(IPage<User> page, @Param(Constants.WRAPPER) Wrapper wrapper)-->
+    <select id="pageCM" resultType="com.syh.entity.User">
+        select * from user ${ew.customSqlSegment}
+    </select>
+
+</mapper>
